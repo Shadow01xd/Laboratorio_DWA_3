@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Mí - NOVATEAM</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Partículas de fondo -->
+    <div class="position-fixed top-0 start-0 w-100 h-100" style="pointer-events: none; z-index: 0;" id="particles">
+    </div>
+
+    <!-- NAVBAR de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NOVATEAM</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sobre-mi.html">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center position-relative" style="min-height: 60vh;">
+        <div class="container position-relative" style="z-index: 10;">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-3 fw-bold mb-4">Sobre Mí</h1>
+                    <p class="lead text-white-50">Mi trayectoria profesional y habilidades técnicas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="py-5 position-relative" style="z-index: 10;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card mb-5">
+                        <div class="card-body p-5">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <div class="profile-image mb-3">
+                                        <i class="bi bi-person-circle" style="font-size: 10rem; color: var(--bs-primary);"></i>
+                                    </div>
+                                    <h3 class="fw-bold">NOVATEAM</h3>
+                                    <p class="">Software Engineer</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2 class="card-title display-6 fw-bold mb-4">
+                                        <i class="bi bi-person-badge me-2 text-primary"></i>Perfil Profesional
+                                    </h2>
+                                    <p class="card-text lead mb-3">
+                                        Soy un desarrollador full-stack apasionado por la tecnología y la innovación. 
+                                        Con más de 5 años de experiencia en desarrollo web y aplicaciones móviles, 
+                                        me especializo en crear soluciones que combinan funcionalidad, diseño y rendimiento.
+                                    </p>
+                                    <p class="card-text mb-3">
+                                        Mi enfoque se centra en entender las necesidades del usuario y traducirlas 
+                                        en experiencias digitales excepcionales. Trabajo con las últimas tecnologías 
+                                        y mejores prácticas para garantizar código limpio, escalable y mantenible.
+                                    </p>
+                                    <p class="card-text">
+                                        Me mantengo actualizado con las tendencias tecnológicas y participo activamente 
+                                        en comunidades de desarrollo para compartir conocimiento y aprender de otros profesionales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE - FORMACIÓN ACADÉMICA Y EXPERIENCIA -->
+    <section class="py-5 position-relative" style="z-index: 10;">
+        <div class="container">
+            <h2 class="section-title text-center display-5 fw-bold mb-5">Trayectoria</h2>
+            
+            <!-- Formación Académica -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h3 class="h4 fw-bold mb-4 text-center">
+                        <i class="bi bi-mortarboard me-2 text-primary"></i>Formación Académica
+                    </h3>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-2 text-center mb-3 mb-md-0">
+                                            <div class="timeline-icon mx-auto d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-mortarboard" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            </div>
+                                            <small class=" d-block mt-2">2020 - 2024</small>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h4 class="fw-bold mb-2">Ingeniería en Sistemas de Información</h4>
+                                            <p class="text-primary fw-bold mb-2">Universidad Tecnológica Nacional</p>
+                                            <p class="mb-0">
+                                                Especialización en desarrollo de software, arquitectura de sistemas y 
+                                                gestión de proyectos tecnológicos. Proyecto final: Plataforma de e-learning 
+                                                con inteligencia artificial.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-2 text-center mb-3 mb-md-0">
+                                            <div class="timeline-icon mx-auto d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-patch-check" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            </div>
+                                            <small class=" d-block mt-2">2018 - 2020</small>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h4 class="fw-bold mb-2">Técnico en Programación</h4>
+                                            <p class="text-primary fw-bold mb-2">Instituto Técnico Superior</p>
+                                            <p class="mb-0">
+                                                Formación técnica en desarrollo web, bases de datos y programación orientada 
+                                                a objetos. Certificación en tecnologías front-end y back-end.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-2 text-center mb-3 mb-md-0">
+                                            <div class="timeline-icon mx-auto d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-cloud-check" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            </div>
+                                            <small class=" d-block mt-2">2022 - 2023</small>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h4 class="fw-bold mb-2">Certificación en Cloud Computing</h4>
+                                            <p class="text-primary fw-bold mb-2">AWS Certified Solutions Architect</p>
+                                            <p class="mb-0">
+                                                Certificación profesional en arquitectura de soluciones en la nube, 
+                                                incluyendo diseño de sistemas escalables y seguros en AWS.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiencia Profesional -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="h4 fw-bold mb-4 text-center">
+                        <i class="bi bi-briefcase me-2 text-primary"></i>Experiencia Profesional
+                    </h3>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-2 text-center mb-3 mb-md-0">
+                                            <div class="timeline-icon mx-auto d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-stack" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            </div>
+                                            <small class=" d-block mt-2">2022 - Presente</small>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h4 class="fw-bold mb-2">Senior Full-Stack Developer</h4>
+                                            <p class="text-primary fw-bold mb-2">Tech Solutions Inc.</p>
+                                            <p class="mb-2">
+                                                Liderazgo de equipos de desarrollo en proyectos de gran escala. 
+                                                Desarrollo de aplicaciones web y móviles utilizando React, Node.js y tecnologías cloud.
+                                            </p>
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Arquitectura de sistemas escalables</li>
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Mentoría de desarrolladores junior</li>
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Implementación de CI/CD pipelines</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-2 text-center mb-3 mb-md-0">
+                                            <div class="timeline-icon mx-auto d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-display" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            </div>
+                                            <small class=" d-block mt-2">2020 - 2022</small>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h4 class="fw-bold mb-2">Frontend Developer</h4>
+                                            <p class="text-primary fw-bold mb-2">Digital Agency Pro</p>
+                                            <p class="mb-2">
+                                                Desarrollo de interfaces de usuario modernas y responsivas. 
+                                                Colaboración con equipos de diseño para implementar experiencias visuales atractivas.
+                                            </p>
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Desarrollo con React y Vue.js</li>
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Optimización de rendimiento</li>
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Implementación de design systems</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item mb-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-2 text-center mb-3 mb-md-0">
+                                            <div class="timeline-icon mx-auto d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-terminal" style="font-size: 2.5rem; color: var(--bs-primary);"></i>
+                                            </div>
+                                            <small class=" d-block mt-2">2019 - 2020</small>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <h4 class="fw-bold mb-2">Junior Developer</h4>
+                                            <p class="text-primary fw-bold mb-2">StartupTech</p>
+                                            <p class="mb-2">
+                                                Desarrollo de aplicaciones móviles y web para startups. 
+                                                Aprendizaje continuo y aplicación de mejores prácticas de desarrollo.
+                                            </p>
+                                            <ul class="list-unstyled mb-0">
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Desarrollo móvil con React Native</li>
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>APIs REST con Node.js</li>
+                                                <li><i class="bi bi-check-circle text-primary me-2"></i>Bases de datos MongoDB y PostgreSQL</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRESS BARS - HABILIDADES -->
+    <section class="py-5 position-relative" style="z-index: 10;">
+        <div class="container">
+            <h2 class="section-title text-center display-5 fw-bold mb-5">Habilidades Técnicas</h2>
+            
+            <div class="row g-4">
+                <!-- Lenguajes de Programación -->
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-4">
+                                <i class="bi bi-code-slash me-2 text-primary"></i>Lenguajes de Programación
+                            </h3>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">JavaScript</span>
+                                    <span class="text-primary">95%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">TypeScript</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Python</span>
+                                    <span class="text-primary">80%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Java</span>
+                                    <span class="text-primary">70%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-0">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">PHP</span>
+                                    <span class="text-primary">75%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks y Librerías -->
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-4">
+                                <i class="bi bi-stack me-2 text-primary"></i>Frameworks y Librerías
+                            </h3>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">React</span>
+                                    <span class="text-primary">90%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Vue.js</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Node.js</span>
+                                    <span class="text-primary">88%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Express</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-0">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">React Native</span>
+                                    <span class="text-primary">82%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de Datos -->
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-4">
+                                <i class="bi bi-database me-2 text-primary"></i>Bases de Datos
+                            </h3>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">MongoDB</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">PostgreSQL</span>
+                                    <span class="text-primary">80%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">MySQL</span>
+                                    <span class="text-primary">78%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-0">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Redis</span>
+                                    <span class="text-primary">70%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas y Tecnologías -->
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-4">
+                                <i class="bi bi-tools me-2 text-primary"></i>Herramientas y Tecnologías
+                            </h3>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Git / GitHub</span>
+                                    <span class="text-primary">92%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Docker</span>
+                                    <span class="text-primary">80%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">AWS</span>
+                                    <span class="text-primary">75%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">CI/CD</span>
+                                    <span class="text-primary">78%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-0">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Linux</span>
+                                    <span class="text-primary">85%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-top border-secondary py-4 mt-5 position-relative" style="z-index: 10;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">© 2025 NOVATEAM. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" data-bs-toggle="tooltip" title="GitHub">
+                        <i class="bi bi-github" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" data-bs-toggle="tooltip" title="LinkedIn">
+                        <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-white" data-bs-toggle="tooltip" title="Twitter">
+                        <i class="bi bi-twitter-x" style="font-size: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+

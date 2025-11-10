@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - NOVATEAM</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Partículas de fondo -->
+    <div class="position-fixed top-0 start-0 w-100 h-100" style="pointer-events: none; z-index: 0;" id="particles">
+    </div>
+
+    <!-- NAVBAR de Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NOVATEAM</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-mi.html">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section d-flex align-items-center position-relative" style="min-height: 100vh;">
+        <div class="container position-relative" style="z-index: 10;">
+            <div class="row align-items-center g-4">
+                <!-- Columna izquierda: Título y subtítulo -->
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Portafolio</h1>
+                    <p class="lead text-white-50">Proyectos destacados que demuestran mi experiencia y habilidades</p>
+                </div>
+                
+                <!-- Columna derecha: Carrusel -->
+                <div class="col-lg-6">
+                    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner rounded">
+                            <div class="carousel-item active">
+                                <div class="carousel-image-placeholder d-block w-100" style="height: 400px; background: linear-gradient(135deg, #4a9eff 0%, #2979cc 100%); display: flex; align-items: center; justify-content: center;">
+                                    <div class="text-center text-white">
+                                        <i class="bi bi-laptop" style="font-size: 5rem;"></i>
+                                        <h3 class="mt-3">E-Commerce Platform</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-image-placeholder d-block w-100" style="height: 400px; background: linear-gradient(135deg, #ff8c42 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center;">
+                                    <div class="text-center text-white">
+                                        <i class="bi bi-kanban" style="font-size: 5rem;"></i>
+                                        <h3 class="mt-3">Task Management App</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-image-placeholder d-block w-100" style="height: 400px; background: linear-gradient(135deg, #4a9eff 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center;">
+                                    <div class="text-center text-white">
+                                        <i class="bi bi-cloud-sun" style="font-size: 5rem;"></i>
+                                        <h3 class="mt-3">Weather Dashboard</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE PROYECTOS CON MODALS -->
+    <section class="py-5 position-relative" style="z-index: 10;">
+        <div class="container">
+            <h2 class="section-title text-center display-5 fw-bold mb-5">Proyectos Destacados</h2>
+
+            <div class="row g-4">
+                <!-- Proyecto 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top project-image" style="height: 200px; background: linear-gradient(135deg, #4a9eff 0%, #2979cc 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-cart-check" style="font-size: 4rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold d-block mb-2">01</small>
+                            <h3 class="card-title h5 fw-bold mb-3">E-Commerce Platform</h3>
+                            <p class="card-text mb-3">
+                                Plataforma completa de comercio electrónico con sistema de pagos integrado.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge">React</span>
+                                <span class="badge">Node.js</span>
+                                <span class="badge">MongoDB</span>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProyecto1">
+                                <i class="bi bi-eye me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top project-image" style="height: 200px; background: linear-gradient(135deg, #ff8c42 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-kanban" style="font-size: 4rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold d-block mb-2">02</small>
+                            <h3 class="card-title h5 fw-bold mb-3">Task Management App</h3>
+                            <p class="card-text mb-3">
+                                Aplicación web para gestión de proyectos y tareas con colaboración en tiempo real.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge">Vue.js</span>
+                                <span class="badge">Firebase</span>
+                                <span class="badge">Tailwind CSS</span>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProyecto2">
+                                <i class="bi bi-eye me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top project-image" style="height: 200px; background: linear-gradient(135deg, #4a9eff 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-cloud-sun" style="font-size: 4rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold d-block mb-2">03</small>
+                            <h3 class="card-title h5 fw-bold mb-3">Weather Dashboard</h3>
+                            <p class="card-text mb-3">
+                                Dashboard interactivo del clima con visualización de datos en tiempo real.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge">JavaScript</span>
+                                <span class="badge">API REST</span>
+                                <span class="badge">Chart.js</span>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProyecto3">
+                                <i class="bi bi-eye me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top project-image" style="height: 200px; background: linear-gradient(135deg, #2979cc 0%, #4a9eff 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-globe" style="font-size: 4rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold d-block mb-2">04</small>
+                            <h3 class="card-title h5 fw-bold mb-3">Portfolio Website</h3>
+                            <p class="card-text mb-3">
+                                Sitio web portfolio minimalista con animaciones 3D y diseño oscuro.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge">HTML5</span>
+                                <span class="badge">CSS3</span>
+                                <span class="badge">Three.js</span>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProyecto4">
+                                <i class="bi bi-eye me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top project-image" style="height: 200px; background: linear-gradient(135deg, #ff6b1a 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-cup-hot" style="font-size: 4rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold d-block mb-2">05</small>
+                            <h3 class="card-title h5 fw-bold mb-3">Restaurant Landing Page</h3>
+                            <p class="card-text mb-3">
+                                Landing page moderna para restaurante con menú digital interactivo.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge">React</span>
+                                <span class="badge">SCSS</span>
+                                <span class="badge">Framer Motion</span>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProyecto5">
+                                <i class="bi bi-eye me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 project-card">
+                        <div class="card-img-top project-image" style="height: 200px; background: linear-gradient(135deg, #4a9eff 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-graph-up" style="font-size: 4rem; color: white;"></i>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-primary fw-bold d-block mb-2">06</small>
+                            <h3 class="card-title h5 fw-bold mb-3">Analytics Dashboard</h3>
+                            <p class="card-text mb-3">
+                                Dashboard de análisis de datos con visualizaciones interactivas y reportes en tiempo real.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge">React</span>
+                                <span class="badge">D3.js</span>
+                                <span class="badge">Python</span>
+                            </div>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalProyecto6">
+                                <i class="bi bi-eye me-2"></i>Ver Detalles
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS PARA DETALLES DE PROYECTOS -->
+    <!-- Modal Proyecto 1 -->
+    <div class="modal fade" id="modalProyecto1" tabindex="-1" aria-labelledby="modalProyecto1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto1Label">E-Commerce Platform</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="project-image mb-3" style="height: 250px; background: linear-gradient(135deg, #4a9eff 0%, #2979cc 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <i class="bi bi-cart-check" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Descripción del Proyecto</h6>
+                    <p class="mb-4">
+                        Plataforma completa de comercio electrónico con sistema de pagos integrado, gestión de inventario 
+                        y panel de administración. Diseño responsivo y optimizado para conversiones. Incluye carrito de 
+                        compras, sistema de autenticación, gestión de pedidos y panel de administración completo.
+                    </p>
+                    <h6 class="fw-bold mb-3">Tecnologías Utilizadas</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-primary">React</span>
+                        <span class="badge bg-primary">Node.js</span>
+                        <span class="badge bg-primary">MongoDB</span>
+                        <span class="badge bg-primary">Stripe</span>
+                        <span class="badge bg-primary">Express</span>
+                        <span class="badge bg-primary">JWT</span>
+                    </div>
+                    <h6 class="fw-bold mb-3">Características Principales</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Sistema de pagos seguro con Stripe</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Gestión de inventario en tiempo real</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Panel de administración completo</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Búsqueda y filtrado avanzado</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Diseño completamente responsivo</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github me-2"></i>Ver en GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Ver Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 2 -->
+    <div class="modal fade" id="modalProyecto2" tabindex="-1" aria-labelledby="modalProyecto2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto2Label">Task Management App</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="project-image mb-3" style="height: 250px; background: linear-gradient(135deg, #ff8c42 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <i class="bi bi-kanban" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Descripción del Proyecto</h6>
+                    <p class="mb-4">
+                        Aplicación web para gestión de proyectos y tareas con colaboración en tiempo real. 
+                        Incluye tableros Kanban, asignación de tareas y seguimiento de progreso. Permite a los equipos 
+                        trabajar de manera eficiente y organizada.
+                    </p>
+                    <h6 class="fw-bold mb-3">Tecnologías Utilizadas</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-primary">Vue.js</span>
+                        <span class="badge bg-primary">Firebase</span>
+                        <span class="badge bg-primary">Tailwind CSS</span>
+                        <span class="badge bg-primary">Vuex</span>
+                    </div>
+                    <h6 class="fw-bold mb-3">Características Principales</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Tableros Kanban interactivos</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Colaboración en tiempo real</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Asignación de tareas y responsables</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Seguimiento de progreso</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Notificaciones en tiempo real</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github me-2"></i>Ver en GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Ver Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 3 -->
+    <div class="modal fade" id="modalProyecto3" tabindex="-1" aria-labelledby="modalProyecto3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto3Label">Weather Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="project-image mb-3" style="height: 250px; background: linear-gradient(135deg, #4a9eff 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <i class="bi bi-cloud-sun" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Descripción del Proyecto</h6>
+                    <p class="mb-4">
+                        Dashboard interactivo del clima con visualización de datos en tiempo real, pronósticos 
+                        extendidos y alertas meteorológicas. Integración con múltiples APIs de clima para proporcionar 
+                        información precisa y actualizada.
+                    </p>
+                    <h6 class="fw-bold mb-3">Tecnologías Utilizadas</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-primary">JavaScript</span>
+                        <span class="badge bg-primary">API REST</span>
+                        <span class="badge bg-primary">Chart.js</span>
+                        <span class="badge bg-primary">Bootstrap</span>
+                    </div>
+                    <h6 class="fw-bold mb-3">Características Principales</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Datos meteorológicos en tiempo real</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Pronósticos extendidos (7 días)</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Visualizaciones con gráficos interactivos</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Alertas meteorológicas</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Búsqueda por ubicación</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github me-2"></i>Ver en GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Ver Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 4 -->
+    <div class="modal fade" id="modalProyecto4" tabindex="-1" aria-labelledby="modalProyecto4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto4Label">Portfolio Website</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="project-image mb-3" style="height: 250px; background: linear-gradient(135deg, #2979cc 0%, #4a9eff 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <i class="bi bi-globe" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Descripción del Proyecto</h6>
+                    <p class="mb-4">
+                        Sitio web portfolio minimalista con animaciones 3D y diseño oscuro. Optimizado para 
+                        rendimiento y accesibilidad con efectos visuales modernos que mejoran la experiencia del usuario.
+                    </p>
+                    <h6 class="fw-bold mb-3">Tecnologías Utilizadas</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-primary">HTML5</span>
+                        <span class="badge bg-primary">CSS3</span>
+                        <span class="badge bg-primary">Three.js</span>
+                        <span class="badge bg-primary">GSAP</span>
+                    </div>
+                    <h6 class="fw-bold mb-3">Características Principales</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Animaciones 3D con Three.js</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Diseño oscuro moderno</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Optimizado para rendimiento</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Totalmente responsivo</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Accesible y SEO friendly</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github me-2"></i>Ver en GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Ver Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 5 -->
+    <div class="modal fade" id="modalProyecto5" tabindex="-1" aria-labelledby="modalProyecto5Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto5Label">Restaurant Landing Page</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="project-image mb-3" style="height: 250px; background: linear-gradient(135deg, #ff6b1a 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <i class="bi bi-cup-hot" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Descripción del Proyecto</h6>
+                    <p class="mb-4">
+                        Landing page moderna para restaurante con menú digital interactivo, sistema de reservas 
+                        online y galería de platos. Diseño elegante y funcional que mejora la experiencia del cliente.
+                    </p>
+                    <h6 class="fw-bold mb-3">Tecnologías Utilizadas</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-primary">React</span>
+                        <span class="badge bg-primary">SCSS</span>
+                        <span class="badge bg-primary">Framer Motion</span>
+                    </div>
+                    <h6 class="fw-bold mb-3">Características Principales</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Menú digital interactivo</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Sistema de reservas online</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Galería de platos con animaciones</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Diseño elegante y moderno</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Optimizado para móviles</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github me-2"></i>Ver en GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Ver Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyecto 6 -->
+    <div class="modal fade" id="modalProyecto6" tabindex="-1" aria-labelledby="modalProyecto6Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProyecto6Label">Analytics Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <div class="project-image mb-3" style="height: 250px; background: linear-gradient(135deg, #4a9eff 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                            <i class="bi bi-graph-up" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <h6 class="fw-bold mb-3">Descripción del Proyecto</h6>
+                    <p class="mb-4">
+                        Dashboard de análisis de datos con visualizaciones interactivas y reportes en tiempo real. 
+                        Permite a las empresas tomar decisiones basadas en datos con información actualizada y precisa.
+                    </p>
+                    <h6 class="fw-bold mb-3">Tecnologías Utilizadas</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="badge bg-primary">React</span>
+                        <span class="badge bg-primary">D3.js</span>
+                        <span class="badge bg-primary">Python</span>
+                        <span class="badge bg-primary">Flask</span>
+                    </div>
+                    <h6 class="fw-bold mb-3">Características Principales</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Visualizaciones interactivas con D3.js</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Reportes en tiempo real</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Filtros y búsqueda avanzada</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Exportación de datos</li>
+                        <li><i class="bi bi-check-circle text-primary me-2"></i>Dashboard personalizable</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github me-2"></i>Ver en GitHub
+                    </a>
+                    <a href="#" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>Ver Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-top border-secondary py-4 mt-5 position-relative" style="z-index: 10;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">© 2025 NOVATEAM. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" data-bs-toggle="tooltip" title="GitHub">
+                        <i class="bi bi-github" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" data-bs-toggle="tooltip" title="LinkedIn">
+                        <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-white" data-bs-toggle="tooltip" title="Twitter">
+                        <i class="bi bi-twitter-x" style="font-size: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
