@@ -591,6 +591,129 @@ body {
 
 .carousel-indicators [data-bs-target] {
     background-color: var(--bs-primary);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-indicators [data-bs-target].active {
+    width: 30px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos específicos para el carrusel del portafolio */
+#projectCarousel .carousel-control-prev,
+#projectCarousel .carousel-control-next {
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Botones del carrusel - estilo rectangular con bordes redondeados */
+.portfolio-carousel-btn {
+    width: 60px !important;
+    height: 80px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-radius: 12px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    backdrop-filter: blur(12px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    opacity: 0.8;
+}
+
+.portfolio-carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    opacity: 1;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2) !important;
+}
+
+.portfolio-carousel-btn:active {
+    transform: translateY(-50%) scale(0.95) !important;
+}
+
+.portfolio-carousel-btn .carousel-control-prev-icon,
+.portfolio-carousel-btn .carousel-control-next-icon {
+    width: 30px !important;
+    height: 30px !important;
+    filter: brightness(0) invert(1) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.portfolio-carousel-btn:hover .carousel-control-prev-icon,
+.portfolio-carousel-btn:hover .carousel-control-next-icon {
+    transform: scale(1.2);
+}
+
+/* Hover mejorado para el slider completo */
+.portfolio-carousel-inner {
+    transition: all 0.4s ease !important;
+    cursor: pointer;
+}
+
+.portfolio-carousel-inner:hover {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(139, 92, 246, 0.3) !important;
+    transform: translateY(-5px);
+}
+
+/* Hover mejorado para cada slide */
+.portfolio-slide {
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+}
+
+.portfolio-carousel-inner:hover .portfolio-slide {
+    transform: scale(1.03);
+}
+
+.portfolio-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.portfolio-carousel-inner:hover .portfolio-slide::before {
+    opacity: 1;
+}
+
+/* Efecto en el contenido al hacer hover */
+.portfolio-carousel-inner:hover .portfolio-slide .text-center {
+    transform: translateY(-10px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-carousel-inner:hover .portfolio-slide i {
+    transform: scale(1.15) rotate(5deg) !important;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.4)) !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.portfolio-carousel-inner:hover .portfolio-slide h3 {
+    transform: translateY(-5px);
+    text-shadow: 0 6px 25px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#projectCarousel .carousel-item {
+    transition: opacity 0.8s ease-in-out;
 }
 
 /* Buttons personalizados */
