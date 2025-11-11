@@ -33,7 +33,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobre-mi.html">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre-mi.html">Sobre Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                 </ul>
@@ -42,44 +42,42 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero-section d-flex align-items-center position-relative"
-        style="min-height: 30vh; padding-top: 80px;">
+    <section class="hero-section d-flex align-items-center position-relative" style="min-height: 35vh;">
         <div class="container position-relative" style="z-index: 10;">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-3 fw-bold mb-4">Blog</h1>
-                    <p class="lead text-white-50">Artículos sobre desarrollo, tecnología y mejores prácticas</p>
+                    <h1 class="display-3 fw-bold mb-3">Blog</h1>
+                    <p class="lead text-white-50 mb-0">Artículos sobre desarrollo, tecnología y mejores prácticas</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LISTADO DE ARTÍCULOS -->
-    <section class="py-5 position-relative" style="z-index: 10;">
+    <!-- Filtros y búsqueda -->
+    <section class="py-3 position-relative" style="z-index: 10;">
         <div class="container">
-            <!-- Filtros y búsqueda -->
-            <div class="row mb-5">
-                <div class="col-lg-8 mx-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
                     <div class="card">
-                        <div class="card-body p-4">
+                        <div class="card-body p-3">
                             <div class="row g-3">
                                 <div class="col-md-8">
                                     <div class="input-group">
                                         <span class="input-group-text bg-transparent border-end-0">
                                             <i class="bi bi-search text-primary"></i>
                                         </span>
-                                        <input type="text" id="searchInput" class="form-control border-start-0"
+                                        <input type="text" class="form-control border-start-0" id="blogSearch"
                                             placeholder="Buscar artículos...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <select class="form-select" id="categoryFilter">
+                                    <select class="form-select" id="blogCategory">
                                         <option value="">Todas las categorías</option>
-                                        <option value="frontend">Frontend</option>
-                                        <option value="backend">Backend</option>
-                                        <option value="mobile">Mobile</option>
-                                        <option value="devops">DevOps</option>
-                                        <option value="tutoriales">Tutoriales</option>
+                                        <option value="Frontend">Frontend</option>
+                                        <option value="Backend">Backend</option>
+                                        <option value="Mobile">Mobile</option>
+                                        <option value="DevOps">DevOps</option>
+                                        <option value="Tutoriales">Tutoriales</option>
                                     </select>
                                 </div>
                             </div>
@@ -87,16 +85,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- LISTADO DE ARTÍCULOS -->
+    <section class="py-4 position-relative" style="z-index: 10;">
+        <div class="container">
             <!-- Grid de artículos -->
-            <div class="row g-4 mb-5" id="articlesContainer">
+            <div class="row g-4" id="blogArticles">
                 <!-- Artículo 1 -->
-                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="frontend"
-                    data-title="Introducción a React Hooks"
-                    data-content="Aprende a usar los Hooks de React para simplificar tu código y mejorar la reutilización de lógica en tus componentes funcionales."
-                    data-date="15 Ene 2025" data-read-time="5 min lectura" data-icon="bi-code-slash"
-                    data-gradient="linear-gradient(135deg, #4a9eff 0%, #2979cc 100%)">
-                    <div class="card h-100 blog-card" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="Frontend">
+                    <div class="card h-100 blog-card">
                         <div class="card-img-top blog-image"
                             style="height: 200px; background: linear-gradient(135deg, #4a9eff 0%, #2979cc 100%); display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-code-slash" style="font-size: 4rem; color: white;"></i>
@@ -108,15 +107,15 @@
                                     <i class="bi bi-calendar3 me-1"></i>15 Ene 2025
                                 </small>
                             </div>
-                            <h3 class="card-title h5 fw-bold mb-3">Introducción a React Hooks</h3>
-                            <p class="card-text  mb-3">
+                            <h3 class="card-title h5 fw-bold mb-3 blog-title">Introducción a React Hooks</h3>
+                            <p class="card-text  mb-3 blog-description">
                                 Aprende a usar los Hooks de React para simplificar tu código y mejorar la reutilización
                                 de lógica en tus componentes funcionales.
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-sm btn-outline-primary read-more-btn">
+                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBlog1">
                                     Leer más <i class="bi bi-arrow-right ms-1"></i>
-                                </a>
+                                </button>
                                 <small>
                                     <i class="bi bi-clock me-1"></i>5 min lectura
                                 </small>
@@ -126,12 +125,8 @@
                 </div>
 
                 <!-- Artículo 2 -->
-                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="backend"
-                    data-title="Arquitectura de APIs RESTful"
-                    data-content="Guía completa para diseñar APIs RESTful escalables y mantenibles. Mejores prácticas y patrones de diseño para backend moderno."
-                    data-date="12 Ene 2025" data-read-time="8 min lectura" data-icon="bi-server"
-                    data-gradient="linear-gradient(135deg, #ff8c42 0%, #ff6b1a 100%)">
-                    <div class="card h-100 blog-card" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="Backend">
+                    <div class="card h-100 blog-card">
                         <div class="card-img-top blog-image"
                             style="height: 200px; background: linear-gradient(135deg, #ff8c42 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-server" style="font-size: 4rem; color: white;"></i>
@@ -143,15 +138,15 @@
                                     <i class="bi bi-calendar3 me-1"></i>12 Ene 2025
                                 </small>
                             </div>
-                            <h3 class="card-title h5 fw-bold mb-3">Arquitectura de APIs RESTful</h3>
-                            <p class="card-text  mb-3">
+                            <h3 class="card-title h5 fw-bold mb-3 blog-title">Arquitectura de APIs RESTful</h3>
+                            <p class="card-text  mb-3 blog-description">
                                 Guía completa para diseñar APIs RESTful escalables y mantenibles. Mejores prácticas y
                                 patrones de diseño para backend moderno.
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-sm btn-outline-primary read-more-btn">
+                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBlog2">
                                     Leer más <i class="bi bi-arrow-right ms-1"></i>
-                                </a>
+                                </button>
                                 <small>
                                     <i class="bi bi-clock me-1"></i>8 min lectura
                                 </small>
@@ -161,12 +156,8 @@
                 </div>
 
                 <!-- Artículo 3 -->
-                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="mobile"
-                    data-title="React Native: Primeros Pasos"
-                    data-content="Tutorial completo para comenzar con React Native. Configuración del entorno, componentes básicos y navegación entre pantallas."
-                    data-date="10 Ene 2025" data-read-time="6 min lectura" data-icon="bi-phone"
-                    data-gradient="linear-gradient(135deg, #4a9eff 0%, #ff8c42 100%)">
-                    <div class="card h-100 blog-card" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="Mobile">
+                    <div class="card h-100 blog-card">
                         <div class="card-img-top blog-image"
                             style="height: 200px; background: linear-gradient(135deg, #4a9eff 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-phone" style="font-size: 4rem; color: white;"></i>
@@ -178,15 +169,15 @@
                                     <i class="bi bi-calendar3 me-1"></i>10 Ene 2025
                                 </small>
                             </div>
-                            <h3 class="card-title h5 fw-bold mb-3">React Native: Primeros Pasos</h3>
-                            <p class="card-text  mb-3">
+                            <h3 class="card-title h5 fw-bold mb-3 blog-title">React Native: Primeros Pasos</h3>
+                            <p class="card-text  mb-3 blog-description">
                                 Tutorial completo para comenzar con React Native. Configuración del entorno,
                                 componentes básicos y navegación entre pantallas.
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-sm btn-outline-primary read-more-btn">
+                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBlog3">
                                     Leer más <i class="bi bi-arrow-right ms-1"></i>
-                                </a>
+                                </button>
                                 <small>
                                     <i class="bi bi-clock me-1"></i>6 min lectura
                                 </small>
@@ -196,12 +187,8 @@
                 </div>
 
                 <!-- Artículo 4 -->
-                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="devops"
-                    data-title="Docker para Desarrolladores"
-                    data-content="Aprende a containerizar tus aplicaciones con Docker. Desde conceptos básicos hasta orquestación con Docker Compose."
-                    data-date="8 Ene 2025" data-read-time="7 min lectura" data-icon="bi-cloud"
-                    data-gradient="linear-gradient(135deg, #2979cc 0%, #4a9eff 100%)">
-                    <div class="card h-100 blog-card" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="DevOps">
+                    <div class="card h-100 blog-card">
                         <div class="card-img-top blog-image"
                             style="height: 200px; background: linear-gradient(135deg, #2979cc 0%, #4a9eff 100%); display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-cloud" style="font-size: 4rem; color: white;"></i>
@@ -213,15 +200,15 @@
                                     <i class="bi bi-calendar3 me-1"></i>8 Ene 2025
                                 </small>
                             </div>
-                            <h3 class="card-title h5 fw-bold mb-3">Docker para Desarrolladores</h3>
-                            <p class="card-text  mb-3">
+                            <h3 class="card-title h5 fw-bold mb-3 blog-title">Docker para Desarrolladores</h3>
+                            <p class="card-text  mb-3 blog-description">
                                 Aprende a containerizar tus aplicaciones con Docker. Desde conceptos básicos hasta
                                 orquestación con Docker Compose.
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-sm btn-outline-primary read-more-btn">
+                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBlog4">
                                     Leer más <i class="bi bi-arrow-right ms-1"></i>
-                                </a>
+                                </button>
                                 <small>
                                     <i class="bi bi-clock me-1"></i>7 min lectura
                                 </small>
@@ -231,12 +218,8 @@
                 </div>
 
                 <!-- Artículo 5 -->
-                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="tutoriales"
-                    data-title="Git: Flujo de Trabajo Eficiente"
-                    data-content="Mejora tu flujo de trabajo con Git. Estrategias de branching, merge y resolución de conflictos para equipos de desarrollo."
-                    data-date="5 Ene 2025" data-read-time="6 min lectura" data-icon="bi-git"
-                    data-gradient="linear-gradient(135deg, #ff6b1a 0%, #ff8c42 100%)">
-                    <div class="card h-100 blog-card" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="Tutoriales">
+                    <div class="card h-100 blog-card">
                         <div class="card-img-top blog-image"
                             style="height: 200px; background: linear-gradient(135deg, #ff6b1a 0%, #ff8c42 100%); display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-git" style="font-size: 4rem; color: white;"></i>
@@ -248,15 +231,15 @@
                                     <i class="bi bi-calendar3 me-1"></i>5 Ene 2025
                                 </small>
                             </div>
-                            <h3 class="card-title h5 fw-bold mb-3">Git: Flujo de Trabajo Eficiente</h3>
-                            <p class="card-text  mb-3">
+                            <h3 class="card-title h5 fw-bold mb-3 blog-title">Git: Flujo de Trabajo Eficiente</h3>
+                            <p class="card-text  mb-3 blog-description">
                                 Mejora tu flujo de trabajo con Git. Estrategias de branching, merge y resolución
                                 de conflictos para equipos de desarrollo.
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-sm btn-outline-primary read-more-btn">
+                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBlog5">
                                     Leer más <i class="bi bi-arrow-right ms-1"></i>
-                                </a>
+                                </button>
                                 <small class="">
                                     <i class="bi bi-clock me-1"></i>6 min lectura
                                 </small>
@@ -266,12 +249,8 @@
                 </div>
 
                 <!-- Artículo 6 -->
-                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="backend"
-                    data-title="Seguridad en Aplicaciones Web"
-                    data-content="Principios fundamentales de seguridad web. Autenticación, autorización, protección contra vulnerabilidades comunes y mejores prácticas."
-                    data-date="3 Ene 2025" data-read-time="10 min lectura" data-icon="bi-shield-check"
-                    data-gradient="linear-gradient(135deg, #4a9eff 0%, #ff6b1a 100%)">
-                    <div class="card h-100 blog-card" style="cursor: pointer;">
+                <div class="col-lg-4 col-md-6 fade-in-up blog-article" data-category="Backend">
+                    <div class="card h-100 blog-card">
                         <div class="card-img-top blog-image"
                             style="height: 200px; background: linear-gradient(135deg, #4a9eff 0%, #ff6b1a 100%); display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-shield-check" style="font-size: 4rem; color: white;"></i>
@@ -283,15 +262,15 @@
                                     <i class="bi bi-calendar3 me-1"></i>3 Ene 2025
                                 </small>
                             </div>
-                            <h3 class="card-title h5 fw-bold mb-3">Seguridad en Aplicaciones Web</h3>
-                            <p class="card-text mb-3">
+                            <h3 class="card-title h5 fw-bold mb-3 blog-title">Seguridad en Aplicaciones Web</h3>
+                            <p class="card-text mb-3 blog-description">
                                 Principios fundamentales de seguridad web. Autenticación, autorización,
                                 protección contra vulnerabilidades comunes y mejores prácticas.
                             </p>
                             <div class="d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn btn-sm btn-outline-primary read-more-btn">
+                                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalBlog6">
                                     Leer más <i class="bi bi-arrow-right ms-1"></i>
-                                </a>
+                                </button>
                                 <small class="">
                                     <i class="bi bi-clock me-1"></i>10 min lectura
                                 </small>
@@ -303,43 +282,501 @@
         </div>
     </section>
 
-    <!-- MODAL DE ARTÍCULO -->
-    <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true"
-        style="z-index: 1055;">
-        <div class="modal-dialog modal-dialog-centered modal-lg modal-article">
-            <div class="modal-content modal-article-content">
-                <div class="modal-header modal-article-header border-0">
-                    <div class="modal-header-decoration"></div>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body modal-article-body">
-                    <div class="modal-image-container mb-4" id="modalImage">
-                        <div class="modal-image-overlay"></div>
-                        <!-- El icono se insertará aquí dinámicamente -->
+    <!-- MODALS DE ARTÍCULOS DEL BLOG -->
+    <!-- Modal Artículo 1 -->
+    <div class="modal fade" id="modalBlog1" tabindex="-1" aria-labelledby="modalBlog1Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content blog-modal-content">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <div class="blog-modal-hero blog-hero-frontend">
+                        <div class="blog-modal-media blog-media-blue">
+                            <span class="blog-modal-media-glare"></span>
+                            <i class="bi bi-code-slash blog-modal-media-icon" aria-hidden="true"></i>
+                        </div>
                     </div>
-                    <div class="modal-meta-info mb-4">
-                        <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
-                            <span class="badge modal-category-badge" id="modalCategory">Categoría</span>
-                            <div class="modal-meta-item">
-                                <i class="bi bi-calendar3 me-2"></i>
-                                <span id="modalDate">Fecha</span>
+                    <button type="button" class="blog-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="blog-modal-meta">
+                        <span class="badge bg-primary">Frontend</span>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3" aria-hidden="true"></i>
+                            <span>15 Ene 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>5 min lectura</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="blog-modal-heading" id="modalBlog1Label">Introducción a React Hooks</h2>
+                            <p class="lead blog-modal-lead">
+                                Los Hooks de React revolucionaron la forma en que escribimos componentes funcionales, permitiéndonos
+                                usar estado y otras características de React sin necesidad de clases.
+                            </p>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-question-circle me-2"></i>¿Qué son los Hooks?
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Los Hooks son funciones especiales que te permiten "engancharte" a características de React como el estado
+                                    y el ciclo de vida desde componentes funcionales. Fueron introducidos en React 16.8 y desde entonces se han
+                                    convertido en la forma estándar de escribir componentes.
+                                </p>
                             </div>
-                            <div class="modal-meta-item">
-                                <i class="bi bi-clock me-2"></i>
-                                <span id="modalReadTime">Tiempo</span>
+                            <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                <i class="bi bi-list-check me-2"></i>Hooks Principales
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem; transition: all 0.3s;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">useState:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para manejar el estado local del componente</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">useEffect:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para efectos secundarios y ciclo de vida</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">useContext:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para acceder al contexto de React</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">useReducer:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para manejar estado complejo</span>
+                                </li>
+                            </ul>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-star me-2"></i>Ventajas de los Hooks
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Los Hooks simplifican la reutilización de lógica entre componentes, hacen el código más fácil de entender
+                                    y permiten una mejor organización del código. Además, eliminan la necesidad de usar clases en la mayoría
+                                    de los casos, haciendo el código más funcional y declarativo.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <h2 class="modal-title modal-article-title mb-4" id="modalTitle">Título del Artículo</h2>
-                    <div class="article-content modal-article-text" id="modalContent">
-                        <p>Contenido del artículo...</p>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Artículo 2 -->
+    <div class="modal fade" id="modalBlog2" tabindex="-1" aria-labelledby="modalBlog2Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content blog-modal-content">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <div class="blog-modal-hero blog-hero-backend">
+                        <div class="blog-modal-media blog-media-orange">
+                            <span class="blog-modal-media-glare"></span>
+                            <i class="bi bi-server blog-modal-media-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="blog-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="blog-modal-meta">
+                        <span class="badge bg-primary">Backend</span>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3" aria-hidden="true"></i>
+                            <span>12 Ene 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>8 min lectura</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="blog-modal-heading" id="modalBlog2Label">Arquitectura de APIs RESTful</h2>
+                            <p class="lead blog-modal-lead">
+                                Diseñar APIs RESTful escalables y mantenibles es fundamental para el éxito de cualquier aplicación moderna.
+                                Aquí te mostramos las mejores prácticas y patrones de diseño.
+                            </p>
+                            <div class="mb-4 p-4" style="background: rgba(255, 140, 66, 0.1); border-left: 4px solid #ff8c42; border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: #ff8c42; font-size: 1.1rem;">
+                                    <i class="bi bi-diagram-3 me-2"></i>Principios REST
+                                </h6>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>Recursos:</strong> Todo es un recurso identificado por una URI</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>Métodos HTTP:</strong> GET, POST, PUT, DELETE para operaciones CRUD</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>Stateless:</strong> Cada petición debe contener toda la información necesaria</li>
+                                    <li class="mb-0"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>Representaciones:</strong> JSON, XML u otros formatos</li>
+                                </ul>
+                            </div>
+                            <div class="mb-4 p-4" style="background: rgba(255, 140, 66, 0.1); border-left: 4px solid #ff8c42; border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: #ff8c42; font-size: 1.1rem;">
+                                    <i class="bi bi-star me-2"></i>Mejores Prácticas
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Usa nombres de recursos en plural, implementa versionado de APIs, maneja errores de forma consistente,
+                                    utiliza códigos de estado HTTP apropiados y documenta tu API correctamente. La paginación y el filtrado
+                                    son esenciales para APIs que manejan grandes volúmenes de datos.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer modal-article-footer border-0">
-                    <div class="modal-footer-decoration"></div>
-                    <button type="button" class="btn btn-primary btn-modal-close" data-bs-dismiss="modal">
-                        <i class="bi bi-x-lg me-2"></i>Cerrar
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Artículo 3 -->
+    <div class="modal fade" id="modalBlog3" tabindex="-1" aria-labelledby="modalBlog3Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content blog-modal-content">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <div class="blog-modal-hero blog-hero-mobile">
+                        <div class="blog-modal-media blog-media-mixed">
+                            <span class="blog-modal-media-glare"></span>
+                            <i class="bi bi-phone blog-modal-media-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="blog-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="blog-modal-meta">
+                        <span class="badge bg-primary">Mobile</span>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3" aria-hidden="true"></i>
+                            <span>10 Ene 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>6 min lectura</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="blog-modal-heading" id="modalBlog3Label">React Native: Primeros Pasos</h2>
+                            <p class="lead blog-modal-lead">
+                                React Native te permite crear aplicaciones móviles nativas usando JavaScript y React.
+                                Aprende los conceptos básicos para comenzar tu primer proyecto.
+                            </p>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-gear me-2"></i>Configuración del Entorno
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Para comenzar con React Native, necesitas instalar Node.js, el CLI de React Native y las herramientas
+                                    de desarrollo nativas (Android Studio para Android o Xcode para iOS).
+                                </p>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                <i class="bi bi-puzzle me-2"></i>Componentes Básicos
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">View:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Equivalente a div en web</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Text:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para mostrar texto</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Image:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para imágenes</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">ScrollView:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Para contenido desplazable</span>
+                                </li>
+                            </ul>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-compass me-2"></i>Navegación
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    React Navigation es la biblioteca estándar para la navegación en React Native. Permite crear navegación
+                                    por pestañas, stack navigation y drawer navigation de forma sencilla y personalizable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Artículo 4 -->
+    <div class="modal fade" id="modalBlog4" tabindex="-1" aria-labelledby="modalBlog4Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content blog-modal-content">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <div class="blog-modal-hero blog-hero-devops">
+                        <div class="blog-modal-media blog-media-cyan">
+                            <span class="blog-modal-media-glare"></span>
+                            <i class="bi bi-cloud blog-modal-media-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="blog-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="blog-modal-meta">
+                        <span class="badge bg-primary">DevOps</span>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3" aria-hidden="true"></i>
+                            <span>8 Ene 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>7 min lectura</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="blog-modal-heading" id="modalBlog4Label">Docker para Desarrolladores</h2>
+                            <p class="lead blog-modal-lead">
+                                Docker ha revolucionado la forma en que desarrollamos, desplegamos y ejecutamos aplicaciones.
+                                Aprende a containerizar tus aplicaciones desde cero.
+                            </p>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-question-circle me-2"></i>¿Qué es Docker?
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Docker es una plataforma que permite empaquetar aplicaciones y sus dependencias en contenedores ligeros
+                                    y portables. Esto garantiza que tu aplicación funcione de la misma manera en cualquier entorno.
+                                </p>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                <i class="bi bi-key me-2"></i>Conceptos Clave
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Imagen:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Plantilla de solo lectura para crear contenedores</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Contenedor:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Instancia ejecutable de una imagen</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Dockerfile:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Archivo con instrucciones para construir una imagen</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Docker Compose:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Herramienta para definir y ejecutar aplicaciones multi-contenedor</span>
+                                </li>
+                            </ul>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-star me-2"></i>Ventajas
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Docker permite un desarrollo más rápido, despliegues más consistentes, mejor uso de recursos y facilita
+                                    la escalabilidad. Además, simplifica la colaboración entre equipos al garantizar que todos trabajen en
+                                    el mismo entorno.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Artículo 5 -->
+    <div class="modal fade" id="modalBlog5" tabindex="-1" aria-labelledby="modalBlog5Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content blog-modal-content">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <div class="blog-modal-hero blog-hero-tutorials">
+                        <div class="blog-modal-media blog-media-orange">
+                            <span class="blog-modal-media-glare"></span>
+                            <i class="bi bi-git blog-modal-media-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="blog-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="blog-modal-meta">
+                        <span class="badge bg-primary">Tutoriales</span>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3" aria-hidden="true"></i>
+                            <span>5 Ene 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>6 min lectura</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="blog-modal-heading" id="modalBlog5Label">Git: Flujo de Trabajo Eficiente</h2>
+                            <p class="lead blog-modal-lead">
+                                Dominar Git es esencial para cualquier desarrollador. Aprende estrategias de branching, merge y
+                                resolución de conflictos para trabajar eficientemente en equipo.
+                            </p>
+                            <div class="mb-4 p-4" style="background: rgba(255, 140, 66, 0.1); border-left: 4px solid #ff8c42; border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: #ff8c42; font-size: 1.1rem;">
+                                    <i class="bi bi-diagram-2 me-2"></i>Estrategias de Branching
+                                </h6>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>Git Flow:</strong> Modelo con branches de desarrollo, features, releases y hotfixes</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>GitHub Flow:</strong> Modelo más simple con main y feature branches</li>
+                                    <li class="mb-0"><i class="bi bi-check-circle-fill me-2" style="color: #ff8c42;"></i><strong>Trunk-Based:</strong> Desarrollo directo en main con pequeñas features</li>
+                                </ul>
+                            </div>
+                            <div class="mb-4 p-4" style="background: rgba(255, 140, 66, 0.1); border-left: 4px solid #ff8c42; border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: #ff8c42; font-size: 1.1rem;">
+                                    <i class="bi bi-exclamation-triangle me-2"></i>Resolución de Conflictos
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Los conflictos ocurren cuando dos ramas tienen cambios incompatibles en las mismas líneas. Para resolverlos,
+                                    identifica los cambios conflictivos, decide qué versión mantener y realiza el merge correctamente.
+                                </p>
+                            </div>
+                            <div class="mb-4 p-4" style="background: rgba(255, 140, 66, 0.1); border-left: 4px solid #ff8c42; border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: #ff8c42; font-size: 1.1rem;">
+                                    <i class="bi bi-star me-2"></i>Mejores Prácticas
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Haz commits pequeños y frecuentes, escribe mensajes de commit descriptivos, usa branches para features,
+                                    revisa el código antes de hacer merge y mantén tu repositorio actualizado con pull/fetch regularmente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Artículo 6 -->
+    <div class="modal fade" id="modalBlog6" tabindex="-1" aria-labelledby="modalBlog6Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content blog-modal-content">
+                <div class="modal-header border-0 pb-0 position-relative">
+                    <div class="blog-modal-hero blog-hero-security">
+                        <div class="blog-modal-media blog-media-dual">
+                            <span class="blog-modal-media-glare"></span>
+                            <i class="bi bi-shield-check blog-modal-media-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <button type="button" class="blog-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-0">
+                    <div class="blog-modal-meta">
+                        <span class="badge bg-primary">Backend</span>
+                        <div class="meta-item">
+                            <i class="bi bi-calendar3" aria-hidden="true"></i>
+                            <span>3 Ene 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>10 min lectura</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="blog-modal-heading" id="modalBlog6Label">Seguridad en Aplicaciones Web</h2>
+                            <p class="lead blog-modal-lead">
+                                La seguridad web es crítica en el desarrollo moderno. Conoce los principios fundamentales y las
+                                vulnerabilidades más comunes para proteger tus aplicaciones.
+                            </p>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-key me-2"></i>Autenticación y Autorización
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    La autenticación verifica la identidad del usuario, mientras que la autorización determina qué puede hacer.
+                                    Usa JWT tokens, implementa OAuth2 para terceros y siempre hashea las contraseñas con algoritmos seguros como bcrypt.
+                                </p>
+                            </div>
+                            <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                <i class="bi bi-shield-exclamation me-2"></i>Vulnerabilidades Comunes
+                            </h6>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">SQL Injection:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Previene con prepared statements</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">XSS:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Sanitiza todas las entradas del usuario</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">CSRF:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Usa tokens CSRF en formularios</span>
+                                </li>
+                                <li class="mb-3 p-3" style="background: rgba(255, 255, 255, 0.03); border-radius: 0.375rem;">
+                                    <i class="bi bi-check-circle-fill text-primary me-2" style="font-size: 1.2rem;"></i>
+                                    <strong style="color: var(--bs-primary);">Insecure Direct Object References:</strong>
+                                    <span style="color: rgba(255, 255, 255, 0.8);"> Valida permisos de acceso</span>
+                                </li>
+                            </ul>
+                            <div class="mb-4 p-4" style="background: rgba(74, 158, 255, 0.1); border-left: 4px solid var(--bs-primary); border-radius: 0.375rem;">
+                                <h6 class="fw-bold mb-3" style="color: var(--bs-primary); font-size: 1.1rem;">
+                                    <i class="bi bi-star me-2"></i>Mejores Prácticas
+                                </h6>
+                                <p class="mb-0" style="line-height: 1.8;">
+                                    Usa HTTPS siempre, valida y sanitiza todas las entradas, implementa rate limiting, mantén tus dependencias
+                                    actualizadas, usa headers de seguridad (CSP, HSTS), y realiza auditorías de seguridad regularmente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Cerrar
                     </button>
                 </div>
             </div>
@@ -376,9 +813,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <!-- Tu main.js combinado -->
     <script src=".././assets/js/main.js"></script>
-
 </body>
 
 </html>
