@@ -948,207 +948,69 @@ body {
     transition: opacity 0.8s ease-in-out;
 }
 
-/* Botones del carrusel - estilo rectangular con bordes redondeados */
+/* Controles del carrusel (chevrons limpios, sin fondo) */
 .portfolio-carousel-btn {
-    width: 60px !important;
-    height: 80px !important;
+    background: none !important;
+    border: none !important;
+    width: auto !important;
+    height: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    background: rgba(255, 255, 255, 0.12) !important;
-    border-radius: 12px !important;
-    margin-left: 20px !important;
-    margin-right: 20px !important;
-    backdrop-filter: blur(12px) !important;
-    border: 2px solid rgba(255, 255, 255, 0.25) !important;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    opacity: 0.8;
-}
-
-.portfolio-carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.25) !important;
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    transform: translateY(-50%) scale(1.1) !important;
-    opacity: 1;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2) !important;
-}
-
-.portfolio-carousel-btn:active {
-    transform: translateY(-50%) scale(0.95) !important;
+    margin: 0 14px !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    opacity: 1 !important;
 }
 
 .portfolio-carousel-btn .carousel-control-prev-icon,
 .portfolio-carousel-btn .carousel-control-next-icon {
-    width: 30px !important;
-    height: 30px !important;
-    filter: brightness(0) invert(1) !important;
-    transition: transform 0.3s ease !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+}
+
+.portfolio-carousel-btn .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'/%3E%3C/svg%3E");
+}
+
+.portfolio-carousel-btn .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
 }
 
 .portfolio-carousel-btn:hover .carousel-control-prev-icon,
 .portfolio-carousel-btn:hover .carousel-control-next-icon {
-    transform: scale(1.2);
+    transform: scale(1.15);
+    filter: drop-shadow(0 2px 8px rgba(74, 158, 255, 0.6));
 }
 
-/* Hover mejorado para el slider completo */
-.portfolio-carousel-inner {
-    transition: all 0.4s ease !important;
-    cursor: pointer;
-}
-
-.portfolio-carousel-inner:hover {
-    border-color: rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(139, 92, 246, 0.3) !important;
-    transform: translateY(-5px);
-}
-
-/* Hover mejorado para cada slide */
+/* Responsividad mejorada de la slide del portafolio */
 .portfolio-slide {
-    position: relative;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    cursor: pointer;
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+    max-height: 72vh;
 }
 
-.portfolio-carousel-inner:hover .portfolio-slide {
-    transform: scale(1.03);
+@media (max-width: 992px) {
+    .portfolio-slide { max-height: 64vh; }
 }
 
-.portfolio-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.portfolio-carousel-inner:hover .portfolio-slide::before {
-    opacity: 1;
-}
-
-/* Efecto en el contenido al hacer hover */
-.portfolio-carousel-inner:hover .portfolio-slide .text-center {
-    transform: translateY(-10px);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-carousel-inner:hover .portfolio-slide i {
-    transform: scale(1.15) rotate(5deg) !important;
-    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.4)) !important;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.portfolio-carousel-inner:hover .portfolio-slide h3 {
-    transform: translateY(-5px);
-    text-shadow: 0 6px 25px rgba(0, 0, 0, 0.5) !important;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#projectCarousel .carousel-item {
-    transition: opacity 0.8s ease-in-out;
-}
-
-/* Buttons personalizados */
-.btn-primary {
-    background: linear-gradient(135deg, var(--bs-primary), #2979cc);
-    border: none;
-    transition: all 0.3s;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #2979cc, var(--bs-primary));
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.4);
-}
-
-.btn-outline-primary {
-    border-color: var(--bs-primary);
-    color: var(--bs-primary);
-    transition: all 0.3s;
-}
-
-.btn-outline-primary:hover {
-    background: var(--bs-primary);
-    border-color: var(--bs-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.4);
-}
-
-/* Navbar active state */
-.nav-link.active {
-    color: var(--bs-primary) !important;
-    font-weight: bold;
-}
-
-.nav-link.active::before {
-    color: var(--bs-primary);
-}
-
-/* Tooltips */
-.tooltip {
-    --bs-tooltip-bg: var(--bs-primary);
-}
-
-/* Validación de formularios */
-.was-validated .form-control:valid,
-.was-validated .form-select:valid {
-    border-color: #28a745;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.98-.98-.98-.98L1.32 5.75l.98.98-.98.98zm.98-1.98L6.73 1.32l.98.98L3.28 6.73l-.98-.98z'/%3e%3c/svg%3e");
-}
-
-.was-validated .form-control:invalid,
-.was-validated .form-select:invalid {
-    border-color: #dc3545;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 3.6.4.4.4-.4m0 4.8-.4-.4-.4.4'/%3e%3c/svg%3e");
-}
-
-.invalid-feedback {
-    color: #dc3545;
-    font-size: 0.875rem;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-    .hero-title {
-        letter-spacing: 5px;
-        font-size: clamp(2.5rem, 10vw, 4rem);
-    }
-
-    .hero-subtitle {
-        font-size: 0.9rem;
-    }
-
-    .nav-link::before {
-        content: '';
-    }
-
-    .timeline-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .timeline-icon-symbol {
-        font-size: 1.6rem;
-    }
-
-    .service-card,
-    .project-card,
-    .blog-card {
-        margin-bottom: 1.5rem;
-    }
+    .portfolio-slide { aspect-ratio: 4 / 3; max-height: 58vh; }
 }
 
 @media (max-width: 576px) {
-    .timeline-icon {
-        width: 44px;
-        height: 44px;
-    }
+    .portfolio-slide { aspect-ratio: 4 / 3; max-height: 52vh; }
+}
 
-    .timeline-icon-symbol {
-        font-size: 1.4rem;
-    }
+/* Imagen full-bleed y nítida */
+.portfolio-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
