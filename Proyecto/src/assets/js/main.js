@@ -276,4 +276,126 @@ function applyNavbarScrollState() {
       filter();
     })();
   });
-  
+
+// --- Filtro de artículos del Blog (migrado desde blog.html) ---
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Filtro de artículos inicializado');
+
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const articles = document.querySelectorAll('.blog-article');
+
+    // Función para filtrar artículos
+    function filterArticles() {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const selectedCategory = categoryFilter ? categoryFilter.value : '';
+
+        articles.forEach(article => {
+            const articleCategory = article.getAttribute('data-category');
+            const articleTitle = (article.getAttribute('data-title') || '').toLowerCase();
+            const articleContent = (article.getAttribute('data-content') || '').toLowerCase();
+
+            // Verificar filtro de categoría
+            const categoryMatch = !selectedCategory || articleCategory === selectedCategory;
+
+            // Verificar búsqueda por texto
+            const searchMatch = !searchTerm ||
+                articleTitle.includes(searchTerm) ||
+                articleContent.includes(searchTerm);
+
+            // Mostrar u ocultar artículo según ambos filtros
+            if (categoryMatch && searchMatch) {
+                article.style.display = '';
+                // Re-animar el artículo cuando se muestra
+                article.classList.add('fade-in-up');
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+
+    // Event listeners
+    if (searchInput) {
+        searchInput.addEventListener('input', filterArticles);
+    }
+
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', filterArticles);
+    }
+
+    // Aplica el filtro inicial al cargar
+    filterArticles();
+});
+
+// --- Sistema de Modal para Artículos del Blog ---
+document.addEventListener('DOMContentLoaded', function () {
+    const articleModal = new bootstrap.Modal(document.getElementById('articleModal'));
+    const articles = document.querySelectorAll('.blog-article');
+
+    // Función para obtener el nombre de la categoría en español
+    function getCategoryName(category) {
+        const categories = {
+            'frontend': 'Frontend',
+            'backend': 'Backend',
+            'mobile': 'Mobile',
+            'devops': 'DevOps',
+            'tutoriales': 'Tutoriales'
+        };
+        return categories[category] || category;
+    }
+
+    // Función para abrir el modal con la información del artículo
+    function openArticleModal(articleElement) {
+        const title = articleElement.getAttribute('data-title');
+        const content = articleElement.getAttribute('data-content');
+        const category = articleElement.getAttribute('data-category');
+        const date = articleElement.getAttribute('data-date');
+        const readTime = articleElement.getAttribute('data-read-time');
+        const icon = articleElement.getAttribute('data-icon');
+        const gradient = articleElement.getAttribute('data-gradient');
+
+        // Actualizar el contenido del modal
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalCategory').textContent = getCategoryName(category);
+        document.getElementById('modalDate').textContent = date;
+        document.getElementById('modalReadTime').textContent = readTime;
+        document.getElementById('modalContent').innerHTML = `<p>${content}</p>`;
+
+        // Actualizar la imagen/icono del modal
+        const modalImage = document.getElementById('modalImage');
+        modalImage.style.background = gradient;
+        // Mantener el overlay y agregar el icono
+        modalImage.innerHTML = `
+            <div class="modal-image-overlay"></div>
+            <i class="bi ${icon}" style="font-size: 5.5rem; color: white; z-index: 2; position: relative; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));"></i>
+        `;
+
+        // Abrir el modal
+        articleModal.show();
+    }
+
+    // Event listener para los botones "Leer más"
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const articleElement = this.closest('.blog-article');
+            if (articleElement) {
+                openArticleModal(articleElement);
+            }
+        });
+    });
+
+    // Event listener para hacer clic en la card completa
+    articles.forEach(article => {
+        const card = article.querySelector('.blog-card');
+        if (card) {
+            card.addEventListener('click', function (e) {
+                // Evitar que se active si se hace clic en el botón "Leer más"
+                if (!e.target.closest('.read-more-btn')) {
+                    openArticleModal(article);
+                }
+            });
+        }
+    });
+});
