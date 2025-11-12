@@ -1,0 +1,13 @@
+{
+  "name": "novateam-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio NOVATEAM con Bootstrap y CSS personalizado purgado con PurgeCSS",
+  "scripts": {
+    "purge": "purgecss --config purgecss.config.cjs",
+    "build": "npm run purge"
+  },
+  "devDependencies": {
+    "purgecss": "^5.0.0"
+  }
+}

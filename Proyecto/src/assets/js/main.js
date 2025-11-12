@@ -28,7 +28,87 @@ function applyNavbarScrollState() {
         particlesContainer.appendChild(particle);
       }
     })();
-  
+
+    (function cardTextScrollIndicators() {
+      const areas = document.querySelectorAll('.project-card .card-text');
+      if (!areas.length) return;
+
+      function ensureIndicators(area) {
+        const overflow = area.scrollHeight > area.clientHeight + 2;
+        if (!overflow) {
+          // No overflow: limpiar
+          area.classList.remove('scroll-decorated', 'has-top', 'has-bottom');
+          const body = area.closest('.card-body');
+          body && body.querySelectorAll('.scroll-arrow[data-for="desc"]').forEach(el => el.remove());
+          return;
+        }
+
+        // Crear si faltan
+        if (!area.classList.contains('scroll-decorated')) {
+          area.classList.add('scroll-decorated');
+          const body = area.closest('.card-body');
+          if (!body) return;
+
+          const up = document.createElement('button');
+          up.type = 'button';
+          up.className = 'scroll-arrow arrow-up';
+          up.setAttribute('data-for', 'desc');
+          up.setAttribute('aria-label', 'Desplazar arriba');
+          up.innerHTML = '<i class="bi bi-chevron-up"></i>';
+
+          const down = document.createElement('button');
+          down.type = 'button';
+          down.className = 'scroll-arrow arrow-down';
+          down.setAttribute('data-for', 'desc');
+          down.setAttribute('aria-label', 'Desplazar abajo');
+          down.innerHTML = '<i class="bi bi-chevron-down"></i>';
+
+          body.appendChild(up);
+          body.appendChild(down);
+
+          function positionArrows() {
+            const rectTop = area.offsetTop;
+            const rectBottomTop = rectTop + area.clientHeight - 22 - 4; // 22px btn height + 4px pad
+            up.style.top = (rectTop + 4) + 'px';
+            down.style.top = (rectBottomTop) + 'px';
+          }
+
+          positionArrows();
+          window.addEventListener('resize', positionArrows);
+
+          up.addEventListener('click', e => {
+            e.stopPropagation();
+            area.scrollBy({ top: -48, behavior: 'smooth' });
+          });
+          down.addEventListener('click', e => {
+            e.stopPropagation();
+            area.scrollBy({ top: 48, behavior: 'smooth' });
+          });
+
+          area.addEventListener('scroll', () => updateArrows(area));
+        }
+
+        updateArrows(area);
+      }
+
+      function updateArrows(area) {
+        const hasTop = area.scrollTop > 0;
+        const hasBottom = area.scrollTop + area.clientHeight < area.scrollHeight - 1;
+        area.classList.toggle('has-top', hasTop);
+        area.classList.toggle('has-bottom', hasBottom);
+      }
+
+      const ro = new ResizeObserver(() => {
+        areas.forEach(a => ensureIndicators(a));
+      });
+
+      areas.forEach(area => {
+        ensureIndicators(area);
+        ro.observe(area);
+      });
+      window.addEventListener('load', () => areas.forEach(a => ensureIndicators(a)));
+    })();
+
     // -------------------------
     // Smooth scroll interno para anclas
     // -------------------------
@@ -44,7 +124,7 @@ function applyNavbarScrollState() {
     });
   
     // -------------------------
-    // Tooltips de Bootstrap (si está disponible)
+    // Tooltips de Bootstrap
     // -------------------------
     if (window.bootstrap) {
       const triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -80,6 +160,15 @@ function applyNavbarScrollState() {
         cube.style.transform =
           `translateX(-50%) rotateX(${45 + Math.sin(rotation * 0.01) * 10}deg) rotateY(${45 + rotation}deg)`;
       }, 50);
+    })();
+  
+    (function showAllProjectBadges() {
+      const containers = document.querySelectorAll('.project-card .card-body .d-flex.flex-wrap.gap-2.mb-3');
+      containers.forEach(container => {
+        container.classList.remove('align-items-center');
+        container.querySelectorAll('.badge').forEach(b => b.classList.remove('d-none'));
+        container.querySelectorAll('.badge-toggle').forEach(btn => btn.remove());
+      });
     })();
   
     // -------------------------
